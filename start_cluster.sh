@@ -1,3 +1,4 @@
 #!/bin/bash
 
-/opt/redis-trib.rb create --replicas 1 ${CLUSTER_INFO}
+clusterInfo=`echo ${CLUSTER_INFO} | sed 's/|/ /g'`
+/opt/redis-trib.rb create --replicas 1 $clusterInfo
